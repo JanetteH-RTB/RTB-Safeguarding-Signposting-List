@@ -37,19 +37,17 @@ header{background:#0C3B6E;color:#fff;padding:14px 22px;display:flex;align-items:
 .no-results{padding:50px;text-align:center;color:#888;font-size:14px;grid-column:1/-1}
 .load-more{margin:18px auto 0;display:block;padding:10px 32px;border:2px solid #185FA5;border-radius:8px;background:#fff;color:#185FA5;font-size:13px;font-weight:600;cursor:pointer}
 .load-more:hover{background:#185FA5;color:#fff}
-
 /* MAP */
-.map-layout{display:grid;grid-template-columns:320px 1fr;gap:20px;align-items:start}
-.map-panel-box{background:#fff;border:1px solid #d8dde8;border-radius:10px;padding:16px;position:sticky;top:10px}
-.map-panel-box h4{font-size:10px;color:#777;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
-.region-btn-list{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
-.region-btn{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border:1px solid #d8dde8;border-radius:8px;background:#f9fbfd;cursor:pointer;font-size:12px;font-weight:500;color:#333;text-align:left;transition:all .12s;width:100%}
+.map-layout{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start}
+.map-sidebar{background:#fff;border:1px solid #d8dde8;border-radius:10px;padding:16px;position:sticky;top:10px}
+.map-sidebar h4{font-size:10px;color:#777;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;font-weight:600}
+.region-list{display:flex;flex-direction:column;gap:5px}
+.region-btn{display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border:1px solid #d8dde8;border-radius:8px;background:#f9fbfd;cursor:pointer;font-size:13px;font-weight:500;color:#333;text-align:left;transition:all .12s;width:100%}
 .region-btn:hover{background:#e8f1fb;border-color:#a8c0dc;color:#0C3B6E}
 .region-btn.active{background:#0C3B6E;border-color:#0C3B6E;color:#fff}
-.region-btn .rbadge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(0,0,0,.08);min-width:28px;text-align:center}
-.region-btn.active .rbadge{background:rgba(255,255,255,.2)}
-.map-note{font-size:10px;color:#999;text-align:center;margin-top:4px}
-.map-placeholder{background:#fff;border:1px solid #d8dde8;border-radius:10px;padding:60px 24px;text-align:center;color:#888;font-size:14px;line-height:1.9}
+.r-count{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(0,0,0,.07);min-width:30px;text-align:center;flex-shrink:0}
+.region-btn.active .r-count{background:rgba(255,255,255,.2)}
+.map-placeholder{background:#fff;border:1px solid #d8dde8;border-radius:10px;padding:70px 24px;text-align:center;color:#888;font-size:14px;line-height:2}
 .map-detail{display:none}
 .map-det-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px}
 .map-det-head h2{font-size:20px;font-weight:700;color:#0C3B6E}
@@ -58,13 +56,12 @@ header{background:#0C3B6E;color:#fff;padding:14px 22px;display:flex;align-items:
 .mstat{background:#f5f8fc;border-radius:8px;padding:10px 12px}
 .mstat .ml{font-size:10px;color:#777}.mstat .mv{font-size:20px;font-weight:700;color:#0C3B6E}
 .cause-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.cause-chip{font-size:11px;padding:4px 12px;border-radius:18px;border:1px solid #ccd3e0;background:#fff;color:#666;cursor:pointer;user-select:none}
+.cause-chip{font-size:11px;padding:4px 12px;border-radius:18px;border:1px solid #ccd3e0;background:#fff;color:#666;cursor:pointer;user-select:none;transition:all .12s}
 .cause-chip:hover{border-color:#185FA5;color:#185FA5}
 .cause-chip.active{background:#185FA5;color:#fff;border-color:#185FA5}
 .map-search{width:100%;padding:8px 12px;border:1px solid #ccd3e0;border-radius:8px;font-size:13px;margin-bottom:12px;outline:none}
 .map-search:focus{border-color:#185FA5}
 .map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:10px}
-
 /* CHARTS */
 .chart-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .chart-card{background:#fff;border:1px solid #d8dde8;border-radius:10px;padding:20px}
@@ -74,30 +71,13 @@ header{background:#0C3B6E;color:#fff;padding:14px 22px;display:flex;align-items:
 .bar-track{flex:1;background:#eef2f8;border-radius:4px;height:10px;overflow:hidden}
 .bar-fill{height:100%;border-radius:4px}
 .bar-num{font-size:11px;color:#888;width:28px;text-align:right;flex-shrink:0}
-
-/* AUDIT */
-.audit-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
-.audit-stat{border-radius:10px;padding:14px 18px;color:#fff}
-.audit-stat .al{font-size:10px;opacity:.85;margin-bottom:3px}
-.audit-stat .av{font-size:28px;font-weight:700;line-height:1}
-.audit-note{font-size:12px;color:#777;margin-bottom:14px;line-height:1.6}
-.audit-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.af-btn{padding:6px 14px;border-radius:7px;border:1.5px solid #ccd3e0;background:#fff;font-size:12px;font-weight:600;color:#666;cursor:pointer}
-.af-btn:hover,.af-btn.active{background:#185FA5;color:#fff;border-color:#185FA5}
-.audit-wrap{border:1px solid #d8dde8;border-radius:10px;overflow:hidden;max-height:560px;overflow-y:auto}
-table{width:100%;border-collapse:collapse;font-size:11px}
-th{background:#0C3B6E;color:#fff;padding:9px 12px;text-align:left;font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0}
-td{padding:8px 12px;border-bottom:1px solid #eef0f5;vertical-align:top}
-tr:nth-child(even) td{background:#f9fbfd}tr:hover td{background:#f0f5fc}
-.s-ok{color:#2E7D32;font-weight:700}.s-warn{color:#92400E;font-weight:700}.s-dead{color:#991B1B;font-weight:700}
-.t-url{color:#185FA5;word-break:break-all;font-size:10px}
+/* FOOTER */
 footer{background:#fff;border-top:1px solid #e0e6f0;padding:14px 22px;font-size:11px;color:#888;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:24px}
 @media(max-width:720px){
   .stats{grid-template-columns:repeat(2,1fr)}
   .map-layout{grid-template-columns:1fr}
-  .map-panel-box{position:static}
+  .map-sidebar{position:static}
   .chart-layout{grid-template-columns:1fr}
-  .audit-summary{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -113,9 +93,8 @@ footer{background:#fff;border-top:1px solid #e0e6f0;padding:14px 22px;font-size:
 
 <div class="tabs">
   <button class="tab active" data-tab="browse">Browse all services</button>
-  <button class="tab" data-tab="map">Regional map</button>
+  <button class="tab" data-tab="map">By region</button>
   <button class="tab" data-tab="chart">By category</button>
-  <button class="tab" data-tab="audit">Link audit</button>
 </div>
 
 <!-- BROWSE -->
@@ -129,43 +108,24 @@ footer{background:#fff;border-top:1px solid #e0e6f0;padding:14px 22px;font-size:
   <div class="toolbar">
     <select id="reg-sel">
       <option value="">All regions</option>
-      <option value="East Midlands">East Midlands</option>
-      <option value="East of England">East of England</option>
-      <option value="London">London</option>
-      <option value="Nationwide">Nationwide</option>
-      <option value="North East">North East</option>
-      <option value="North West">North West</option>
-      <option value="Northern Ireland">Northern Ireland</option>
-      <option value="Scotland">Scotland</option>
-      <option value="South East">South East</option>
-      <option value="South West">South West</option>
-      <option value="Wales">Wales</option>
-      <option value="West Midlands">West Midlands</option>
-      <option value="Yorkshire and the Humber">Yorkshire and the Humber</option>
+      <option>East Midlands</option><option>East of England</option><option>London</option>
+      <option>Nationwide</option><option>North East</option><option>North West</option>
+      <option>Northern Ireland</option><option>Scotland</option><option>South East</option>
+      <option>South West</option><option>Wales</option><option>West Midlands</option>
+      <option>Yorkshire and the Humber</option>
     </select>
     <select id="cause-sel">
       <option value="">All categories</option>
-      <option value="Being a carer">Being a carer</option>
-      <option value="Bereavement">Bereavement</option>
-      <option value="Cancer support">Cancer support</option>
-      <option value="Citizens advice">Citizens advice</option>
-      <option value="Disability">Disability</option>
-      <option value="Domestic abuse">Domestic abuse</option>
-      <option value="Drug/Alcohol abuse">Drug/Alcohol abuse</option>
-      <option value="Eating disorders">Eating disorders</option>
+      <option>Being a carer</option><option>Bereavement</option><option>Cancer support</option>
+      <option>Citizens advice</option><option>Disability</option><option>Domestic abuse</option>
+      <option>Drug/Alcohol abuse</option><option>Eating disorders</option>
       <option value="Equality &amp; Diversity">Equality &amp; Diversity</option>
       <option value="Equality &amp; Diversity - Ethnic Minorities">Equality &amp; Diversity - Ethnic Minorities</option>
       <option value="Equality &amp; Diversity - LGBT+">Equality &amp; Diversity - LGBT+</option>
-      <option value="Financial issues">Financial issues</option>
-      <option value="Food bank">Food bank</option>
-      <option value="Gambling">Gambling</option>
-      <option value="Homelessness/Housing">Homelessness/Housing</option>
-      <option value="Mental Health">Mental Health</option>
-      <option value="Neurodiversity">Neurodiversity</option>
-      <option value="Refugee Support">Refugee Support</option>
-      <option value="Relationships">Relationships</option>
-      <option value="Victim Support">Victim Support</option>
-      <option value="Youth Support">Youth Support</option>
+      <option>Financial issues</option><option>Food bank</option><option>Gambling</option>
+      <option>Homelessness/Housing</option><option>Mental Health</option><option>Neurodiversity</option>
+      <option>Refugee Support</option><option>Relationships</option><option>Victim Support</option>
+      <option>Youth Support</option>
     </select>
     <input type="text" id="search-inp" placeholder="Search by name, area or keyword&hellip;">
     <span class="result-info" id="result-info"></span>
@@ -174,18 +134,18 @@ footer{background:#fff;border-top:1px solid #e0e6f0;padding:14px 22px;font-size:
   <button class="load-more" id="load-more-btn" style="display:none">Show more</button>
 </div>
 
-<!-- MAP -->
+<!-- MAP / REGION -->
 <div id="tab-map" class="panel">
   <div class="map-layout">
-    <div class="map-panel-box">
+    <div class="map-sidebar">
       <h4>Select a region</h4>
-      <div class="region-btn-list" id="region-btn-list"></div>
-      <div class="map-note">Click any region to explore its services</div>
+      <div class="region-list" id="region-list"></div>
     </div>
     <div>
       <div class="map-placeholder" id="map-placeholder">
-        <div style="font-size:40px;margin-bottom:12px">&#128205;</div>
-        <strong>Select a region from the list</strong><br>to explore support services in that area
+        <div style="font-size:44px;margin-bottom:12px">&#128205;</div>
+        <strong>Select a region from the list</strong><br>
+        to browse support services in that area
       </div>
       <div class="map-detail" id="map-detail">
         <div class="map-det-head">
@@ -213,26 +173,6 @@ footer{background:#fff;border-top:1px solid #e0e6f0;padding:14px 22px;font-size:
   </div>
 </div>
 
-<!-- AUDIT -->
-<div id="tab-audit" class="panel">
-  <div class="audit-summary">
-    <div class="audit-stat" style="background:#2E7D32"><div class="al">Secure (https)</div><div class="av" id="au-ok">-</div></div>
-    <div class="audit-stat" style="background:#92400E"><div class="al">Insecure (http only)</div><div class="av" id="au-warn">-</div></div>
-    <div class="audit-stat" style="background:#991B1B"><div class="al">Dead domains</div><div class="av" id="au-dead">-</div></div>
-  </div>
-  <p class="audit-note">Link status is assessed based on URL format. Secure = https://, Insecure = http:// (may still work), Dead = known failed domains from June 2026 audit. Updated links from the revised master spreadsheet are reflected here.</p>
-  <div class="audit-filters">
-    <button class="af-btn active" data-filter="all">All links</button>
-    <button class="af-btn" data-filter="dead">Dead domains</button>
-    <button class="af-btn" data-filter="warn">Insecure http</button>
-    <button class="af-btn" data-filter="ok">Secure https</button>
-  </div>
-  <div class="audit-wrap">
-    <table><thead><tr><th>Organisation</th><th>Category</th><th>Region</th><th>URL</th><th>Status</th><th>Action</th></tr></thead>
-    <tbody id="audit-tbody"></tbody></table>
-  </div>
-</div>
-
 <footer>
   <span>Raise the Bar &mdash; Safeguarding Support Directory</span>
   <span>Updated 2026 &middot; 679 organisations &middot; 13 regions</span>
@@ -240,7 +180,7 @@ footer{background:#fff;border-top:1px solid #e0e6f0;padding:14px 22px;font-size:
 
 <script src="data.js"></script>
 <script>
-var filtered=[],shown=0,mapRegion=null,mapCause=null,auditFilter='all',PAGE=48;
+var filtered=[],shown=0,mapRegion=null,mapCause=null,PAGE=48;
 
 function h(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
@@ -255,22 +195,25 @@ document.querySelectorAll('.tab').forEach(function(btn){
   });
 });
 
-// INIT
+// INIT stats
 document.getElementById('s-web').textContent=DATA.filter(function(d){return d.website;}).length;
 
-// Build region buttons for map
-var REGIONS=['Nationwide','North East','North West','Yorkshire and the Humber','East Midlands','West Midlands','East of England','London','South East','South West','Wales','Scotland','Northern Ireland'];
-var regionList=document.getElementById('region-btn-list');
+// Build region list
+var REGIONS=['Nationwide','North East','North West','Yorkshire and the Humber',
+  'East Midlands','West Midlands','East of England','London',
+  'South East','South West','Wales','Scotland','Northern Ireland'];
+var rl=document.getElementById('region-list');
 REGIONS.forEach(function(r){
   var count=DATA.filter(function(d){return d.region===r;}).length;
   var btn=document.createElement('button');
   btn.className='region-btn';
   btn.setAttribute('data-region',r);
-  btn.innerHTML='<span>'+h(r)+'</span><span class="rbadge">'+count+'</span>';
-  regionList.appendChild(btn);
+  btn.innerHTML='<span>'+h(r)+'</span><span class="r-count">'+count+'</span>';
+  rl.appendChild(btn);
 });
 
-regionList.addEventListener('click',function(e){
+// Region click
+document.getElementById('region-list').addEventListener('click',function(e){
   var btn=e.target.closest('.region-btn');
   if(!btn)return;
   var r=btn.getAttribute('data-region');
@@ -286,15 +229,19 @@ regionList.addEventListener('click',function(e){
   document.getElementById('ms-cats').textContent=new Set(reg.map(function(d){return d.cause;})).size;
   document.getElementById('ms-web2').textContent=reg.filter(function(d){return d.website;}).length;
   var causes=[...new Set(reg.map(function(d){return d.cause;}))].sort();
-  var chips=document.getElementById('cause-chips');chips.innerHTML='';
+  var chips=document.getElementById('cause-chips');
+  chips.innerHTML='';
   causes.forEach(function(c){
     var span=document.createElement('span');
-    span.className='cause-chip';span.textContent=c;span.setAttribute('data-cause',c);
+    span.className='cause-chip';
+    span.textContent=c;
+    span.setAttribute('data-cause',c);
     chips.appendChild(span);
   });
   renderMapCards();
 });
 
+// Cause chip click
 document.getElementById('cause-chips').addEventListener('click',function(e){
   var chip=e.target.closest('.cause-chip');if(!chip)return;
   var c=chip.getAttribute('data-cause');
@@ -311,11 +258,13 @@ function renderMapCards(){
   var items=DATA.filter(function(d){
     if(d.region!==mapRegion)return false;
     if(mapCause&&d.cause!==mapCause)return false;
-    if(q){var s=(d.name+' '+(d.about||'')).toLowerCase();if(s.indexOf(q)<0)return false;}
+    if(q){var s=(d.name+' '+(d.about||'')+' '+(d.area||'')).toLowerCase();if(s.indexOf(q)<0)return false;}
     return true;
   });
   document.getElementById('map-count').textContent=items.length+' service'+(items.length!==1?'s':'');
-  document.getElementById('map-grid').innerHTML=items.length===0?'<div class="no-results">No services match.</div>':items.map(cardHTML).join('');
+  document.getElementById('map-grid').innerHTML=items.length===0
+    ?'<div class="no-results">No services match this filter.</div>'
+    :items.map(cardHTML).join('');
 }
 
 // BROWSE
@@ -344,7 +293,9 @@ function applyFilter(){
 
 function renderBrowse(){
   var slice=filtered.slice(0,shown+PAGE);shown=slice.length;
-  document.getElementById('org-grid').innerHTML=filtered.length===0?'<div class="no-results">No services match &mdash; try adjusting the filters.</div>':slice.map(cardHTML).join('');
+  document.getElementById('org-grid').innerHTML=filtered.length===0
+    ?'<div class="no-results">No services match &mdash; try adjusting the filters.</div>'
+    :slice.map(cardHTML).join('');
   var btn=document.getElementById('load-more-btn');
   btn.style.display=shown<filtered.length?'block':'none';
   if(btn.style.display!=='none')btn.textContent='Show more ('+(filtered.length-shown)+' remaining)';
@@ -354,11 +305,14 @@ function cardHTML(d){
   var url=d.website?(d.website.indexOf('http')===0?d.website:'https://'+d.website):'';
   var emailOk=d.email&&d.email.indexOf('@')>0&&d.email.length<80;
   var loc=d.area&&d.area!==d.region&&d.area!=='Nationwide'?(h(d.area)+', '+h(d.region)):h(d.region);
-  return '<div class="card"><div class="card-head"><span class="org-name">'+h(d.name)+'</span><span class="cause-badge">'+h(d.cause)+'</span></div>'
+  return '<div class="card">'
+    +'<div class="card-head"><span class="org-name">'+h(d.name)+'</span><span class="cause-badge">'+h(d.cause)+'</span></div>'
     +'<div class="meta"><span>&#128205; '+loc+'</span>'+(d.phone?'<span>&#128222; '+h(d.phone)+'</span>':'')+'</div>'
     +(d.about?'<div class="about-txt">'+h(d.about)+'</div>':'')
-    +'<div class="card-links">'+(url?'<a class="card-link" href="'+h(url)+'" target="_blank" rel="noopener">&#127760; Website</a>':'')
-    +(emailOk?'<a class="card-link" href="mailto:'+h(d.email.split(' ')[0])+'">&#9993; Email</a>':'')+'</div></div>';
+    +'<div class="card-links">'
+    +(url?'<a class="card-link" href="'+h(url)+'" target="_blank" rel="noopener">&#127760; Website</a>':'')
+    +(emailOk?'<a class="card-link" href="mailto:'+h(d.email.split(' ')[0])+'">&#9993; Email</a>':'')
+    +'</div></div>';
 }
 
 // CHARTS
@@ -368,46 +322,19 @@ function cardHTML(d){
   var cS=Object.entries(cC).sort(function(a,b){return b[1]-a[1];});
   var rS=Object.entries(rC).sort(function(a,b){return b[1]-a[1];});
   var cMax=cS[0][1],rMax=rS[0][1];
-  document.getElementById('cause-chart').innerHTML=cS.map(function(x){return '<div class="bar-row"><span class="bar-label" title="'+h(x[0])+'">'+h(x[0])+'</span><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(x[1]/cMax*100)+'%;background:#185FA5"></div></div><span class="bar-num">'+x[1]+'</span></div>';}).join('');
-  document.getElementById('region-chart').innerHTML=rS.map(function(x){return '<div class="bar-row"><span class="bar-label" title="'+h(x[0])+'">'+h(x[0])+'</span><div class="bar-track"><div class="bar-fill" style="width:'+Math.round(x[1]/rMax*100)+'%;background:#0F6E56"></div></div><span class="bar-num">'+x[1]+'</span></div>';}).join('');
+  document.getElementById('cause-chart').innerHTML=cS.map(function(x){
+    return '<div class="bar-row"><span class="bar-label" title="'+h(x[0])+'">'+h(x[0])+'</span>'
+      +'<div class="bar-track"><div class="bar-fill" style="width:'+Math.round(x[1]/cMax*100)+'%;background:#185FA5"></div></div>'
+      +'<span class="bar-num">'+x[1]+'</span></div>';
+  }).join('');
+  document.getElementById('region-chart').innerHTML=rS.map(function(x){
+    return '<div class="bar-row"><span class="bar-label" title="'+h(x[0])+'">'+h(x[0])+'</span>'
+      +'<div class="bar-track"><div class="bar-fill" style="width:'+Math.round(x[1]/rMax*100)+'%;background:#0F6E56"></div></div>'
+      +'<span class="bar-num">'+x[1]+'</span></div>';
+  }).join('');
 })();
 
-// AUDIT
-var AUDIT_DATA=DATA.map(function(d){
-  var url=d.website;if(!url)return null;
-  var status,cls,action;
-  if(url.indexOf('http://')===0){status='Insecure (http)';cls='s-warn';action='Replace http:// with https://';}
-  else{status='Secure';cls='s-ok';action='No action needed';}
-  return{name:d.name,cause:d.cause,region:d.region,url:url,status:status,cls:cls,action:action};
-}).filter(Boolean);
-
-document.getElementById('au-ok').textContent=AUDIT_DATA.filter(function(a){return a.cls==='s-ok';}).length;
-document.getElementById('au-warn').textContent=AUDIT_DATA.filter(function(a){return a.cls==='s-warn';}).length;
-document.getElementById('au-dead').textContent=0;
-
-document.querySelectorAll('.af-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    auditFilter=this.getAttribute('data-filter');
-    document.querySelectorAll('.af-btn').forEach(function(b){b.classList.remove('active');});
-    this.classList.add('active');renderAudit();
-  });
-});
-
-function renderAudit(){
-  var rows=AUDIT_DATA.filter(function(a){
-    if(auditFilter==='warn')return a.cls==='s-warn';
-    if(auditFilter==='ok')return a.cls==='s-ok';
-    if(auditFilter==='dead')return false;
-    return true;
-  });
-  document.getElementById('audit-tbody').innerHTML=rows.map(function(a){
-    var short=a.url.length>46?a.url.slice(0,46)+'&hellip;':h(a.url);
-    return '<tr><td style="font-weight:600;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+h(a.name)+'</td><td style="color:#666;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+h(a.cause)+'</td><td style="white-space:nowrap;color:#666">'+h(a.region)+'</td><td><a class="t-url" href="'+h(a.url)+'" target="_blank" rel="noopener">'+short+'</a></td><td class="'+a.cls+'">'+h(a.status)+'</td><td style="font-size:10px;color:#777">'+h(a.action)+'</td></tr>';
-  }).join('');
-}
-
 applyFilter();
-renderAudit();
 </script>
 </body>
 </html>
